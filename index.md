@@ -8,6 +8,6 @@ Welcome! Here, you will find a selection of projects from the Critical Making DH
 - [Twine Project](#)
 - [Bitsy Project](Bitsy/apple_picking.html)
 - [Taroko Gorge Remix](Taroko_Remix/Taroko%20Gorge.html)
-- [P5 Project](./P5/)
+- [P5 Project](P5/index.html)
 - [Tracery Project](Tracery/Tracery%20to%20HTML%20Template.html)
 - [Tracery Haiku Project](Tracery/tracery-haiku/index.html)
