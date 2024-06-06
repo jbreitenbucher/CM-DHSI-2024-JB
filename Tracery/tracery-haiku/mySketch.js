@@ -1,5 +1,5 @@
-//Tracery example by Allison Parrish
-//But we'll also create a box to hold our lines as they move
+// Tracery example by Allison Parrish
+// But we'll also create a box to hold our lines as they move
 let particles = [];
 let backgroundImage;
 
@@ -13,10 +13,21 @@ function setup() {
 }
 
 function draw() {
-	// Draw the background image with 50% opacity
+	// Draw the background image with aspect ratio preserved
 	background(50);
+	let aspectRatio = backgroundImage.width / backgroundImage.height;
+	let newWidth, newHeight;
+
+	if (windowWidth / windowHeight > aspectRatio) {
+		newHeight = windowHeight;
+		newWidth = newHeight * aspectRatio;
+	} else {
+		newWidth = windowWidth;
+		newHeight = newWidth / aspectRatio;
+	}
+
 	tint(255, 127); // Apply transparency without changing color
-	image(backgroundImage, 0, 0, windowWidth, windowHeight);
+	image(backgroundImage, 0, 0, newWidth, newHeight);
 	noTint(); // Reset tint
 
 	// This moves the particles
@@ -40,7 +51,7 @@ function mouseClicked() {
 }
 
 // grammerSource is generated using:
-// http://tracery.io/ 
+// http://tracery.io/
 // See the tutorial here: http://www.crystalcodepalace.com/traceryTut.html
 var grammarSource = {
 	"origin": [
