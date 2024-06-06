@@ -6,7 +6,7 @@ Welcome! Here, you will find a selection of projects from the Critical Making DH
 
 - [Grids & Gestures](#)
 - [Twine Project](#)
-- [Bitsy Project](#)
-- [Taroko Gorge Remix](#)
+- [Bitsy Project](Bitsy/apple_picking.html)
+- [Taroko Gorge Remix](Taroko_Remix/Taroko%20Gorge.html)
 - [P5 Project](#)
-- [Tracery Project](#)
+- [Tracery Project](Tracery/tracery-haiku/index.html)
