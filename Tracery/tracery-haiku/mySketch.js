@@ -13,21 +13,17 @@ function setup() {
 }
 
 function draw() {
-	// Draw the background image with aspect ratio preserved
+	// Draw the background image with full height displayed and aspect ratio preserved
 	background(50);
 	let aspectRatio = backgroundImage.width / backgroundImage.height;
-	let newWidth, newHeight;
+	let newWidth = windowHeight * aspectRatio;
+	let newHeight = windowHeight;
 
-	if (windowWidth / windowHeight > aspectRatio) {
-		newHeight = windowHeight;
-		newWidth = newHeight * aspectRatio;
-	} else {
-		newWidth = windowWidth;
-		newHeight = newWidth / aspectRatio;
-	}
+	let xOffset = (windowWidth - newWidth) / 2;
+	let yOffset = 0; // Align to top
 
 	tint(255, 127); // Apply transparency without changing color
-	image(backgroundImage, 0, 0, newWidth, newHeight);
+	image(backgroundImage, xOffset, yOffset, newWidth, newHeight);
 	noTint(); // Reset tint
 
 	// This moves the particles
