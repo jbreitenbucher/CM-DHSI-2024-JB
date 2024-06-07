@@ -13,14 +13,18 @@ function setup() {
 }
 
 function draw() {
-	// Draw the background image with full height displayed and aspect ratio preserved
+	// Draw the background image with aspect ratio preserved
 	background(50);
 	let aspectRatio = backgroundImage.width / backgroundImage.height;
-	let newWidth = windowHeight * aspectRatio;
-	let newHeight = windowHeight;
+	let newWidth, newHeight;
 
-	let xOffset = (windowWidth - newWidth) / 2;
-	let yOffset = 0; // Align to top
+	if (windowWidth / windowHeight > aspectRatio) {
+		newHeight = windowHeight;
+		newWidth = newHeight * aspectRatio;
+	} else {
+		newWidth = windowWidth;
+		newHeight = newWidth / aspectRatio;
+	}
 
 	tint(255, 127); // Apply transparency without changing color
 	image(backgroundImage, xOffset, yOffset, newWidth, newHeight);
