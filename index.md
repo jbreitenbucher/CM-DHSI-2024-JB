@@ -8,6 +8,7 @@ Welcome! Here, you will find a selection of projects from the Critical Making DH
  - <img src="day.jpeg" alt="Typical day" width="200">
  - <img src="weekend.jpeg" alt="Weekend" width="200">
 * [Twine Project](Twine_Project/MysteryHouse.html)
+ - Incorporating P5 for some animated effects and Tracery for some random text on one passage.
  - <img src="Twine_Project/twine.jpg" alt="Twine plan" width="200">
 * [Bitsy Project](Bitsy/apple_picking.html)
  - <img src="Bitsy/bitsy.jpg" alt="Bitsy plan" width="200">
