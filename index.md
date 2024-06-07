@@ -4,7 +4,9 @@ Welcome! Here, you will find a selection of projects from the Critical Making DH
 
 ## Projects
 
-- [Grids & Gestures](#)
+- Grids & Gestures
+- ![Typical Day](day.jpg)
+- ![Weekend](weekend.jpg)
 - [Twine Project](Twine_Project/MysteryHouse.html)
 - [Bitsy Project](Bitsy/apple_picking.html)
 - [Taroko Gorge Remix](Taroko_Remix/Taroko%20Gorge.html)
