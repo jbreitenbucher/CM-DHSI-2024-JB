@@ -50,55 +50,52 @@ document.head.appendChild(scriptTracery);
 var scriptP5 = document.createElement('script');
 scriptP5.src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js';
 document.head.appendChild(scriptP5);
+console.log("loaded");
 </script><tw-passagedata pid="1" name="The Door" tags="" position="625,300" size="100,100">(enchant:?page,(bg:#a61e4d))You stand in front of a closed door. The door is a brilliant crimson with an imposing skull knocker. A note is taped to the door encouraging you to knock. What do you do? [[knock]] or [[leave]].</tw-passagedata><tw-passagedata pid="2" name="knock" tags="room" position="625,425" size="100,100">The door slowly swings open as candles spark to life. To your left you notice a [[hallway]]. Something falls off the [[bookshelf]] to the right of the room. Do you go down the [[hallway]] or investigate the [[bookshelf]]?</tw-passagedata><tw-passagedata pid="3" name="leave" tags="" position="825,300" size="100,100">(after:2s)[You return to your car and drive away as you notice the glowing eyes in the window.]</tw-passagedata><tw-passagedata pid="4" name="hallway" tags="" position="625,550" size="100,100">&lt;div id=&quot;p5-canvas-hall&quot;&gt;&lt;/div&gt;
 
 &lt;script&gt;
-(function() {
-function setupP5(p) {
-    p.setup = function() {
-        let canvas = p.createCanvas(400, 400);
-        canvas.parent(&#39;p5-canvas-hall&#39;);
+(function(){
+  function setupP5(p){
+   p.setup = function() {
+      let canvas = p.createCanvas(400, 400);
+      canvas.parent(&#39;p5-canvas-hall&#39;);
     }
-    
-    function draw() {
-        p.background(30);
-        drawCandle();
+
+    p.draw = function() {
+      p.background(30);
+      drawCandle();
     }
-    
+
     function drawCandle() {
-        // Candle properties
-        let candleX = p.width / 2;
-        let candleY = p.height * 3 / 4;
-        let candleWidth = 40;
-        let candleHeight = 100;
+      // Candle properties
+      let candleX = p.width / 2;
+      let candleY = p.height * 3 / 4;
+      let candleWidth = 40;
+      let candleHeight = 100;
 
-        // Draw candle body
-        p.noStroke();
-        p.fill(200, 150, 100);
-        p.rect(candleX - candleWidth / 2, candleY - candleHeight, candleWidth, candleHeight);
+      // Draw candle body
+      p.noStroke();
+      p.fill(200, 150, 100);
+      p.rect(candleX - candleWidth / 2, candleY - candleHeight, candleWidth, candleHeight);
 
-        // Draw wick
-        p.fill(0);
-        p.rect(candleX - 2, candleY - candleHeight - 10, 4, 10);
+      // Draw wick
+      p.fill(0);
+      p.rect(candleX - 2, candleY - candleHeight - 10, 4, 10);
 
-        // Draw flame
-        let flameX = candleX + p.random(-2, 2);
-        let flameY = candleY - candleHeight - 20 + p.random(-2, 2);
-        let flameSize = 30 + p.random(-5, 5);
+      // Draw flame
+      let flameX = candleX + p.random(-2, 2);
+      let flameY = candleY - candleHeight - 20 + p.random(-2, 2);
+      let flameSize = 30 + p.random(-5, 5);
 
-        p.noStroke();
-        p.fill(255, 140, 0, 150);
-        p.ellipse(flameX, flameY, flameSize, flameSize * 2);
+      p.noStroke();
+      p.fill(255, 140, 0, 150);
+      p.ellipse(flameX, flameY, flameSize, flameSize * 2);
 
-        p.fill(255, 200, 0, 200);
-        p.ellipse(flameX, flameY, flameSize / 2, flameSize);
+      p.fill(255, 200, 0, 200);
+      p.ellipse(flameX, flameY, flameSize / 2, flameSize);
     }
-
-        return;
-    }
-    
-new p5(setupP5);
-
+  }
+  new p5(setupP5);
 })();
 &lt;/script&gt;
 The hallway is dark compared to the [[entry room-&gt;knock]]. You notice a [[bust]] on a table that looks like it has something on it. Two doors further down the hall are reavealed only by the glint of light off of their handles. Do you investigate the [[bust]], the [[first door]], the [[second door]], or go back to the [[entry room-&gt;knock]]?</tw-passagedata><tw-passagedata pid="5" name="bookshelf" tags="" position="875,550" size="100,100">You notice some oddly conspicuous statues on the [[left-&gt;left statue]] and [[right-&gt;right statue]] of the bookshelf. Do you try to move the [[left statue]] or the [[right statue]]?</tw-passagedata><tw-passagedata pid="6" name="bust" tags="bust" position="475,675" size="100,100">The bust has blood on it. You drop the bust as you scream. After you recover, you notice a bloody print heading further down the hall. You cannot tell if it leads to the [[first door]] or the [[second door]]. Do you move further down the hall to open the [[first door]] or [[second door]] or go back to the [[entry room-&gt;knock]]?</tw-passagedata><tw-passagedata pid="7" name="first door" tags="" position="625,725" size="100,100">As you open the door, you catch a glimpse of a knife as it plunges into your chest.
