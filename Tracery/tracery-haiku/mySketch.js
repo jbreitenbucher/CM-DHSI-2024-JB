@@ -13,18 +13,14 @@ function setup() {
 }
 
 function draw() {
-	// Draw the background image with aspect ratio preserved
+	// Draw the background image with full height displayed and aspect ratio preserved
 	background(50);
 	let aspectRatio = backgroundImage.width / backgroundImage.height;
-	let newWidth, newHeight;
+	let newWidth = windowHeight * aspectRatio;
+	let newHeight = windowHeight;
 
-	if (windowWidth / windowHeight > aspectRatio) {
-		newHeight = windowHeight;
-		newWidth = newHeight * aspectRatio;
-	} else {
-		newWidth = windowWidth;
-		newHeight = newWidth / aspectRatio;
-	}
+	let xOffset = (windowWidth - newWidth) / 2;
+	let yOffset = 0; // Align to top
 
 	tint(255, 127); // Apply transparency without changing color
 	image(backgroundImage, xOffset, yOffset, newWidth, newHeight);
@@ -35,44 +31,44 @@ function draw() {
 		particles[i].update();
 		particles[i].show();
 		if (particles[i].finished()) {
-		  // remove this particle
-		  particles.splice(i, 1);
+			// remove this particle
+			particles.splice(i, 1);
 		}
-	  }
 	}
-	
-	// This draws the word with each mouse click
-	function mouseClicked() {
-	  var grammar = tracery.createGrammar(grammarSource); // set up tracery library
-	  grammar.addModifiers(tracery.baseEngModifiers); // set up English grammar properly (capitals and a/an)
-	  var output = grammar.flatten("#origin#"); // creates sentence from grammar source
-	  let p = new Particle(mouseX, mouseY, output);
-	  particles.push(p);
-	}
-	
-	// grammerSource is generated using:
-	// http://tracery.io/ 
-	// See the tutorial here: http://www.crystalcodepalace.com/traceryTut.html
-	var grammarSource = {
-	  "origin": [
+}
+
+// This draws the word with each mouse click
+function mouseClicked() {
+	var grammar = tracery.createGrammar(grammarSource); // set up tracery library
+	grammar.addModifiers(tracery.baseEngModifiers); // set up English grammar properly (capitals and a/an)
+	var output = grammar.flatten("#origin#"); // creates sentence from grammar source
+	let p = new Particle(mouseX, mouseY, output);
+	particles.push(p);
+}
+
+// grammerSource is generated using:
+// http://tracery.io/
+// See the tutorial here: http://www.crystalcodepalace.com/traceryTut.html
+var grammarSource = {
+	"origin": [
 		"#fiveSyllable#\n#sevenSyllable#\n#fiveSyllable#"
-	  ],
-	  "fiveSyllable": [
+	],
+	"fiveSyllable": [
 		"#adj# #noun# #verb#",
 		"#noun# #verb# #prep#",
 		"#verb# #prep# #noun#",
 		"#adj# #noun# #prep#",
 		"#noun# #adj# #prep#",
 		"#verb# #adj# #noun#"
-	  ],
-	  "sevenSyllable": [
+	],
+	"sevenSyllable": [
 		"#noun# #verb# #prep# #adj# #noun#",
 		"#adj# #noun# #verb# #prep# #noun#",
 		"#verb# #prep# #adj# #noun# #prep#",
 		"#adj# #noun# #prep# #verb# #noun#",
 		"#noun# #verb# #adj# #noun# #prep#"
-	  ],
-	  "noun": [
+	],
+	"noun": [
 		"owl",
 		"tree",
 		"night",
@@ -85,8 +81,8 @@ function draw() {
 		"sky",
 		"hoot",
 		"prey"
-	  ],
-	  "verb": [
+	],
+	"verb": [
 		"glides",
 		"swoops",
 		"hunts",
@@ -97,8 +93,8 @@ function draw() {
 		"soars",
 		"rests",
 		"perches"
-	  ],
-	  "adj": [
+	],
+	"adj": [
 		"silent",
 		"wise",
 		"nocturnal",
@@ -109,8 +105,8 @@ function draw() {
 		"mysterious",
 		"lonely",
 		"quiet"
-	  ],
-	  "prep": [
+	],
+	"prep": [
 		"in",
 		"on",
 		"under",
@@ -121,36 +117,36 @@ function draw() {
 		"at",
 		"over",
 		"near"
-	  ]
-	};
-	
-	class Particle {
-	  constructor(x, y, text) {
+	]
+};
+
+class Particle {
+	constructor(x, y, text) {
 		// This sets the x value to mouse position
 		this.x = x;
 		// This keeps the y at mouse position
 		this.y = y;
 		// This sets the range of x movement - try limiting it to + or -
-		this.vx = random(-3, 3);
+		this.vx = random(-2, 2);
 		// This sets the range of y movement - try limiting it to + or -
-		this.vy = random(-4, 4);
+		this.vy = random(-2, 2);
 		// This sets the text size to be consistent
-		this.size = random(12, 24);
+		this.size = random(18, 24);
 		// This sets the current line to the particle
 		this.text = text;
-	  }
-	
-	  finished() {
+	}
+
+	finished() {
 		// Change this to 255 if you reverse the fade
 		return (this.x < 0 || this.x > windowWidth || this.y < 0 || this.y > windowHeight);
-	  }
-	
-	  update() {
+	}
+
+	update() {
 		this.x += this.vx;
 		this.y += this.vy;
-	  }
-	
-	  show() {
+	}
+
+	show() {
 		noStroke();
 		textSize(this.size);
 		// Try any web safe font
@@ -161,5 +157,5 @@ function draw() {
 		fill(random(50, 255), random(50, 255), random(50, 255));
 		// This positions the text
 		text(this.text, this.x, this.y);
-	  }
 	}
+}
