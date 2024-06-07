@@ -4,12 +4,14 @@ Welcome! Here, you will find a selection of projects from the Critical Making DH
 
 ## Projects
 
-- Grids & Gestures
--- ![Typical Day](day.jpeg)
--- ![Weekend](weekend.jpeg)
-- [Twine Project](Twine_Project/MysteryHouse.html)
-- [Bitsy Project](Bitsy/apple_picking.html)
-- [Taroko Gorge Remix](Taroko_Remix/Taroko%20Gorge.html)
-- [P5 Project](P5/index.html)
-- [Tracery Project](Tracery/Tracery%20to%20HTML%20Template.html)
-- [Tracery Haiku Project](Tracery/tracery-haiku/index.html)
+* Grids & Gestures
+ - ![Typical Day](day.jpeg)
+ - ![Weekend](weekend.jpeg)
+* [Twine Project](Twine_Project/MysteryHouse.html)
+ - ![Twine plan](Twine_Project/twine.jpg)
+* [Bitsy Project](Bitsy/apple_picking.html)
+ - ![Bitsy plan](Bitsy/bitsy.jpg)
+* [Taroko Gorge Remix](Taroko_Remix/Taroko%20Gorge.html)
+* [P5 Project](P5/index.html)
+* [Tracery Project](Tracery/Tracery%20to%20HTML%20Template.html)
+* [Tracery Haiku Project](Tracery/tracery-haiku/index.html)
